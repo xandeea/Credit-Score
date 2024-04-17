@@ -73,6 +73,18 @@ Os dados são de uma base do Kaggle (https://www.kaggle.com/datasets/parisrohan/
   
 - __Pontuação de Crédito (Credit_Score):__ Intervalo de pontuação de crédito (Pobre, Padrão, Bom)
 
+## Limpeza dos dados
+Durante o processo de preparação dos dados para modelagem, foram realizadas as seguintes etapas de limpeza:
+
+### Remoção de Underlines em Algumas Respostas
+Foi identificado que algumas respostas continham underlines que não eram relevantes para a análise. Para resolver isso, foi desenvolvida uma função que removeu esses underlines das respostas, garantindo a consistência dos dados.
+
+### Ajuste dos Tipos das Colunas
+As colunas foram cuidadosamente examinadas para garantir que os tipos de dados estivessem corretos. Isso incluiu a conversão de colunas categóricas para o tipo numéricas.
+
+### Tratamento de Valores Negativos Indesejados
+Durante a análise inicial dos dados, foram identificados valores negativos em colunas onde não deveriam existir e que foram ajustados
+
 # Modelo
 A versão final do modelo escolhido foi um ensemble usando a técnica de stacking, composto por:
 
