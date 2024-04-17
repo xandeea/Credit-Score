@@ -10,7 +10,7 @@ Este projeto é organizado da seguinte forma:
 
 __input:__ Pasta contendo os dados de entrada.
 
-__src:__ Pasta contendo os códigos-fonte do projeto, incluindo scripts para pré-processamento de dados, treinamento de modelo e avaliação.
+__src:__ Pasta contendo os códigos-fonte do projeto, dividido em 3 versões, incluindo scripts para pré-processamento de dados, treinamento de modelo e avaliação.
 
 __model:__ Pasta contendo o modelo final salvo em arquivo pickle.
 
