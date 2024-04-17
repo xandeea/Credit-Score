@@ -8,9 +8,11 @@ Você está trabalhando como um cientista de dados em uma empresa financeira glo
 # Estrutura do Projeto
 Este projeto é organizado da seguinte forma:
 
-input: Pasta contendo os dados de entrada.
-src: Pasta contendo os códigos-fonte do projeto, incluindo scripts para pré-processamento de dados, treinamento de modelo e avaliação.
-model: Pasta contendo o modelo final salvo em arquivo pickle.
+__input:__ Pasta contendo os dados de entrada.
+
+__src:__ Pasta contendo os códigos-fonte do projeto, incluindo scripts para pré-processamento de dados, treinamento de modelo e avaliação.
+
+__model:__ Pasta contendo o modelo final salvo em arquivo pickle.
 
 ## Dados
 Os dados são de uma base do Kaggle (https://www.kaggle.com/datasets/parisrohan/credit-score-classification) e incluem as seguintes informações:
