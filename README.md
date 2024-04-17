@@ -99,15 +99,44 @@ Foram criadas várias novas variáveis derivadas com base em diferentes aspectos
 ### Redefinição das Categorias de Pontuação de Crédito
 Para focar especificamente na diferenciação entre bons e maus pagadores, as categorias de pontuação de crédito "Padrão" e "Boa" foram consolidadas em uma única categoria "Boa". Essa abordagem visa otimizar o desempenho do modelo na identificação de clientes com alto risco de crédito.
 
-# Modelo
-A versão final do modelo escolhido foi um ensemble usando a técnica de stacking, composto por:
+# Versões dos Modelos
 
-Random Forest Classifier
-Gradient Boosting Classifier
-XGBoost Classifier
-com uma regressão logística como modelo final do stacking.
+Versões Testadas do Modelo de Classificação de Crédito
+Ao longo do desenvolvimento, testamos três principais versões do modelo para classificar os scores de crédito, cada uma explorando abordagens e técnicas diferentes. Abaixo estão os detalhes de cada versão:
+
+### Versão 1: Seleção e Otimização do Modelo
+Inicialmente, realizamos validação cruzada com vários modelos para identificar o mais adequado. Os modelos testados foram:
+
+Decision Tree: DecisionTreeClassifier()
+Random Forest: RandomForestClassifier()
+Gradient Boosting: GradientBoostingClassifier()
+XGBoost: XGBClassifier()
+Logistic Regression: LogisticRegression(max_iter=1000)
+O modelo de Random Forest se destacou e foi selecionado para uma otimização de hiperparâmetros detalhada usando a ferramenta Optuna.
+
+### Versão 2: Voting Classifier
+Após a otimização do Random Forest, experimentamos um Voting Classifier combinando:
+
+Random Forest: RandomForestClassifier(random_state=42)
+Gradient Boosting: GradientBoostingClassifier(random_state=42)
+XGBoost: XGBClassifier(random_state=42)
+Este approach visava utilizar a força coletiva dos modelos para uma previsão mais estável e robusta.
+
+### Versão 3: Stacking Classifier
+Na última iteração, implementamos um Stacking Classifier que utiliza uma estratégia de empilhamento dos modelos anteriores:
+
+Modelos de base: Random Forest, Gradient Boosting, e XGBoost
+Meta-modelo: LogisticRegression()
+Este modelo foi desenhado para capturar e explorar diferentes padrões e relações nos dados que modelos individuais poderiam não captar sozinhos.
+
+Cada versão foi avaliada com base em sua precisão, recall, F1-score e ROC-AUC, permitindo-nos identificar a melhor abordagem para o problema em questão.
+
+Com isso em conta, o melhor modelo foi o da versão 3
 
 # Métricas de Avaliação
+
+Aplicando o modelo 3, tivemos as seguintes métricas:
+
 __Precision:__ 0.9066
 
 A precisão é a proporção de verdadeiros positivos (pessoas classificadas corretamente como bom crédito) em relação ao total de pessoas classificadas como bom crédito pelo modelo. Neste caso, o modelo tem uma precisão de aproximadamente 90.66%, o que indica que quando ele classifica alguém como tendo bom crédito, está correto em cerca de 90.66% das vezes.
