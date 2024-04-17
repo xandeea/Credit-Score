@@ -73,7 +73,7 @@ Os dados são de uma base do Kaggle (https://www.kaggle.com/datasets/parisrohan/
   
 - __Pontuação de Crédito (Credit_Score):__ Intervalo de pontuação de crédito (Pobre, Padrão, Bom)
 
-## Limpeza dos dados
+# Limpeza dos dados
 Durante o processo de preparação dos dados para modelagem, foram realizadas as seguintes etapas de limpeza:
 
 ### Remoção de Underlines em Algumas Respostas
@@ -84,6 +84,20 @@ As colunas foram cuidadosamente examinadas para garantir que os tipos de dados e
 
 ### Tratamento de Valores Negativos Indesejados
 Durante a análise inicial dos dados, foram identificados valores negativos em colunas onde não deveriam existir e que foram ajustados
+
+# Feature engineering
+
+### Expansão da Coluna 'Type of Loan'
+A coluna 'Type of Loan' foi expandida para criar colunas binárias indicando cada tipo de empréstimo obtido. Essa abordagem permite que o modelo capture a influência de cada tipo de empréstimo na pontuação de crédito do cliente de forma mais granular.
+
+### Criação de uma Nova Coluna de Histórico de Crédito
+Uma nova coluna foi criada para representar o total de meses de histórico de crédito que cada cliente possui. Essa informação pode ser útil para o modelo ao avaliar a estabilidade financeira e o comportamento de pagamento do cliente ao longo do tempo.
+
+### Criação de Novas Variáveis Derivadas
+Foram criadas várias novas variáveis derivadas com base em diferentes aspectos financeiros dos clientes, como renda anual, número de contas bancárias, número de cartões de crédito, etc. Essas variáveis fornecem insights adicionais sobre a situação financeira e o comportamento de pagamento dos clientes, ajudando a enriquecer o conjunto de dados e melhorar o desempenho do modelo.
+
+### Redefinição das Categorias de Pontuação de Crédito
+Para focar especificamente na diferenciação entre bons e maus pagadores, as categorias de pontuação de crédito "Padrão" e "Boa" foram consolidadas em uma única categoria "Boa". Essa abordagem visa otimizar o desempenho do modelo na identificação de clientes com alto risco de crédito.
 
 # Modelo
 A versão final do modelo escolhido foi um ensemble usando a técnica de stacking, composto por:
