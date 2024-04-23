@@ -108,18 +108,26 @@ Ao longo do desenvolvimento, testamos três principais versões do modelo para c
 Inicialmente, realizamos validação cruzada com vários modelos para identificar o mais adequado. Os modelos testados foram:
 
 Decision Tree: DecisionTreeClassifier()
+
 Random Forest: RandomForestClassifier()
+
 Gradient Boosting: GradientBoostingClassifier()
+
 XGBoost: XGBClassifier()
-Logistic Regression: LogisticRegression(max_iter=1000)
+
+Logistic Regression: LogisticRegression()
+
 O modelo de Random Forest se destacou e foi selecionado para uma otimização de hiperparâmetros detalhada usando a ferramenta Optuna.
 
 ### Versão 2: Voting Classifier
 Após a otimização do Random Forest, experimentamos um Voting Classifier combinando:
 
-Random Forest: RandomForestClassifier(random_state=42)
-Gradient Boosting: GradientBoostingClassifier(random_state=42)
-XGBoost: XGBClassifier(random_state=42)
+Random Forest: RandomForestClassifier()
+
+Gradient Boosting: GradientBoostingClassifier()
+
+XGBoost: XGBClassifier()
+
 Este approach visava utilizar a força coletiva dos modelos para uma previsão mais estável e robusta.
 
 ### Versão 3: Stacking Classifier
