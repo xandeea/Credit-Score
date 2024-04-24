@@ -133,7 +133,7 @@ Este approach visava utilizar a força coletiva dos modelos para uma previsão m
 ### Versão 3: Stacking Classifier
 Na última iteração, implementamos um Stacking Classifier que utiliza uma estratégia de empilhamento dos modelos anteriores:
 
-Modelos de base: Random Forest, Gradient Boosting, e XGBoost
+Modelos de base: Random Forest, Gradient Boosting, e KNN e SVC
 Meta-modelo: LogisticRegression()
 Este modelo foi desenhado para capturar e explorar diferentes padrões e relações nos dados que modelos individuais poderiam não captar sozinhos.
 
@@ -145,31 +145,31 @@ Com isso em conta, o melhor modelo foi o da versão 3
 
 Aplicando o modelo 3, tivemos as seguintes métricas:
 
-__Precision:__ 0.9066
+__Precision:__ 0.9068
 
-A precisão é a proporção de verdadeiros positivos (pessoas classificadas corretamente como bom crédito) em relação ao total de pessoas classificadas como bom crédito pelo modelo. Neste caso, o modelo tem uma precisão de aproximadamente 90.66%, o que indica que quando ele classifica alguém como tendo bom crédito, está correto em cerca de 90.66% das vezes.
+A precisão é a proporção de verdadeiros positivos (pessoas classificadas corretamente como bom crédito) em relação ao total de pessoas classificadas como bom crédito pelo modelo. Neste caso, o modelo tem uma precisão de aproximadamente 90.68%, o que indica que quando ele classifica alguém como tendo bom crédito, está correto em cerca de 90.68% das vezes.
 
-__Recall:__ 0.9159
+__Recall:__ 0.9142
 
-Recall, também conhecido como sensibilidade, é a proporção de verdadeiros positivos em relação ao total de verdadeiros positivos e falsos negativos (pessoas que realmente têm bom crédito, mas foram erroneamente classificadas como tendo crédito ruim). Um recall de aproximadamente 91.59% indica que o modelo identifica corretamente cerca de 91.59% das pessoas com bom crédito.
+Recall, também conhecido como sensibilidade, é a proporção de verdadeiros positivos em relação ao total de verdadeiros positivos e falsos negativos (pessoas que realmente têm bom crédito, mas foram erroneamente classificadas como tendo crédito ruim). Um recall de aproximadamente 91.59% indica que o modelo identifica corretamente cerca de 91.42% das pessoas com bom crédito.
 
-__F1-score:__ 0.9113
+__F1-score:__ 0.9110
 
-O F1-score é uma métrica que combina precisão e recall em uma única pontuação, calculada como a média harmônica das duas. Ele fornece uma medida mais equilibrada entre precisão e recall. Um F1-score de aproximadamente 91.13% indica um bom equilíbrio entre precisão e recall para o modelo.
+O F1-score é uma métrica que combina precisão e recall em uma única pontuação, calculada como a média harmônica das duas. Ele fornece uma medida mais equilibrada entre precisão e recall. Um F1-score de aproximadamente 91.10% indica um bom equilíbrio entre precisão e recall para o modelo.
 
-__ROC-AUC:__ 0.9308
+__ROC-AUC:__ 0.9303
 
-A área sob a curva ROC (ROC-AUC) é uma métrica que avalia o desempenho geral de um classificador binário. Quanto mais próximo o valor estiver de 1, melhor será o desempenho do modelo em distinguir entre as classes. Com um valor de aproximadamente 93.08%, seu modelo demonstra um bom desempenho na classificação dos dados.
+A área sob a curva ROC (ROC-AUC) é uma métrica que avalia o desempenho geral de um classificador binário. Quanto mais próximo o valor estiver de 1, melhor será o desempenho do modelo em distinguir entre as classes. Com um valor de aproximadamente 93.03%, seu modelo demonstra um bom desempenho na classificação dos dados.
 
 __Matriz de Confusão__
 Uma matriz de confusão é uma tabela que mostra a performance de um modelo de classificação em um conjunto de dados, onde as linhas representam as classes reais e as colunas representam as classes previstas pelo modelo.
 
 |            | Previsto Crédito Ruim | Previsto Crédito Bom |
 |------------|-----------------------|-----------------------|
-| **Crédito Ruim** | 6689                  | 2010                  |
-| **Crédito Bom** | 1790                  | 19511                 |
+| **Crédito Ruim** | 6699                  | 2000                  |
+| **Crédito Bom** | 1826                  | 19475                 |
 
-O modelo corretamente classificou 6689 pessoas com bom crédito como tendo bom crédito.
-O modelo classificou erroneamente 2010 pessoas com bom crédito como tendo crédito ruim.
-O modelo corretamente classificou 19511 pessoas com crédito ruim como tendo crédito ruim.
-O modelo classificou erroneamente 1790 pessoas com crédito ruim como tendo bom crédito.
+O modelo corretamente classificou 6699 pessoas com bom crédito como tendo bom crédito.
+O modelo classificou erroneamente 2000 pessoas com bom crédito como tendo crédito ruim.
+O modelo corretamente classificou 19475 pessoas com crédito ruim como tendo crédito ruim.
+O modelo classificou erroneamente 1826 pessoas com crédito ruim como tendo bom crédito.
