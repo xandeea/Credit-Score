@@ -1,5 +1,5 @@
 # Credit Score
-## Classificador de Pontuação de Crédito
+## Classificador de Pontuação de Crédito 
 Este é um projeto de Data Science desenvolvido para classificar a pontuação de crédito das pessoas em bom ou ruim, com base em suas informações financeiras e de crédito.
 
 ## Problema a ser resolvido
